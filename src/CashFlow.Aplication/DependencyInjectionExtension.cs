@@ -20,6 +20,7 @@ namespace CashFlow.Aplication
         private static void AddUseCases(this IServiceCollection services)
         {
             services.AddScoped<IRegisterExpenseUseCase, RegisterExpenseUseCase>();
+            services.AddScoped<IGetAllExpensesUseCase, GetAllExpensesUseCase>();
         }
     }
 }

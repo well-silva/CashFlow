@@ -15,15 +15,15 @@ namespace CashFlow.Infrastructure.Repositories
         {
             await _dbContext.Expenses.AddAsync(expense);
         }
-
+        public async Task<List<Expense>> GetAll()
         public void Delete(Expense expense)
         {
-            throw new NotImplementedException();
+            return await _dbContext.Expenses.AsNoTracking().ToListAsync();
         }
 
         public void GetById(int id)
         {
-            throw new NotImplementedException();
+            return await _dbContext.Expenses.AsNoTracking().ToListAsync();
         }
 
         public void Update(Expense expense)
