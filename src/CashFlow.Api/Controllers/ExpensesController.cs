@@ -9,11 +9,12 @@ namespace CashFlow.Api.Controllers
     public class ExpensesController : ControllerBase
     {
         [HttpPost]
-        public IActionResult Regiter([FromBody] RequestRegisterExpenseDto request)
+        public async Task<IActionResult> Regiter(
+            [FromServices] IRegisterExpenseUseCase registerExpenseUseCase,
+            [FromBody] RequestRegisterExpenseDto request
+        )
         {
-            var registerExpenseUseCase = new RegisterExpenseUseCase();
-
-            var response = registerExpenseUseCase.Execute(request);
+            var response = await registerExpenseUseCase.Execute(request);
 
             return Created(string.Empty, response);
         }
