@@ -1,4 +1,5 @@
-﻿using CashFlow.Communication.Requests;
+﻿using AutoMapper;
+using CashFlow.Communication.Requests;
 using CashFlow.Communication.Responses;
 using CashFlow.Exception.ExceptionsBase;
 using ClashFlow.Domain.Entities;
@@ -12,29 +13,29 @@ namespace CashFlow.Aplication.UseCases.Expenses.Register
     {
         private readonly IExpensesRepository _repository;
         private readonly IUnitOfWork _unitOfWork;
-        public RegisterExpenseUseCase(IExpensesRepository repository, IUnitOfWork unitOfWork)
+        private readonly IMapper _mapper;
+
+        public RegisterExpenseUseCase(
+            IExpensesRepository repository,
+            IUnitOfWork unitOfWork,
+            IMapper mapper
+        )
         {
             _repository = repository;
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
         public async Task<ResponseRegisteredExpense> Execute(RequestRegisterExpenseDto request)
         {
             ValidateRequest(request);
 
-            var expense = new Expense
-            {
-                Title = request.Title,
-                Description = request.Description,
-                Date = request.Date,
-                Amount = request.Amount,
-                PaymentType = (PaymentType)request.PaymentType
-            };
+            var expense = _mapper.Map<Expense>(request);
 
             await _repository.Add(expense);
 
             await _unitOfWork.Commit();
 
-            return new ResponseRegisteredExpense();
+            return _mapper.Map<ResponseRegisteredExpense>(expense);
         }
 
         private void ValidateRequest(RequestRegisterExpenseDto request)
