@@ -3,7 +3,6 @@ using CashFlow.Communication.Requests;
 using CashFlow.Communication.Responses;
 using CashFlow.Exception.ExceptionsBase;
 using ClashFlow.Domain.Entities;
-using ClashFlow.Domain.Enums;
 using ClashFlow.Domain.Repositories;
 using ClashFlow.Domain.Repositories.Expenses;
 
@@ -11,12 +10,12 @@ namespace CashFlow.Aplication.UseCases.Expenses.Register
 {
     public class RegisterExpenseUseCase : IRegisterExpenseUseCase
     {
-        private readonly IExpensesRepository _repository;
+        private readonly IExpensesWriteOnlyRepository _repository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
         public RegisterExpenseUseCase(
-            IExpensesRepository repository,
+            IExpensesWriteOnlyRepository repository,
             IUnitOfWork unitOfWork,
             IMapper mapper
         )

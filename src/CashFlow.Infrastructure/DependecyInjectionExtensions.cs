@@ -1,5 +1,5 @@
 ﻿using CashFlow.Infrastructure.DataAccess;
-using CashFlow.Infrastructure.Repositories;
+using CashFlow.Infrastructure.DataAccess.Repositories;
 using ClashFlow.Domain.Repositories;
 using ClashFlow.Domain.Repositories.Expenses;
 using Microsoft.EntityFrameworkCore;
@@ -18,8 +18,9 @@ namespace CashFlow.Infrastructure
 
         private static void AddRepositories(IServiceCollection services)
         {
-            services.AddScoped<IExpensesRepository, ExpensesRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IExpensesWriteOnlyRepository, ExpensesRepository>();
+            services.AddScoped<IExpensesReadOnlyRepository, ExpensesRepository>();
         }
 
         private static void AddDbContext(IServiceCollection services, IConfiguration configuration)
