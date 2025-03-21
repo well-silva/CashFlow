@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using CashFlow.Communication.Responses;
+using CashFlow.Exception;
+using CashFlow.Exception.ExceptionsBase;
 using ClashFlow.Domain.Repositories.Expenses;
 
 namespace CashFlow.Aplication.UseCases.Expenses.GetById
@@ -16,6 +18,11 @@ namespace CashFlow.Aplication.UseCases.Expenses.GetById
         public async Task<ResponseExpense> Execute(long id)
         {
             var result = await _repository.GetById(id);
+
+            if (result is null)
+            {
+                throw new NotFoundException(ResourceErrorMessages.EXPENSE_NOT_FOUND);
+            }
 
             return _mapper.Map<ResponseExpense>(result);
         }
