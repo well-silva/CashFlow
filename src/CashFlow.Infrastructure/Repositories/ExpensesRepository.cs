@@ -1,6 +1,7 @@
 ﻿using CashFlow.Infrastructure.DataAccess;
 using ClashFlow.Domain.Entities;
 using ClashFlow.Domain.Repositories.Expenses;
+using Microsoft.EntityFrameworkCore;
 
 namespace CashFlow.Infrastructure.Repositories
 {
@@ -16,19 +17,12 @@ namespace CashFlow.Infrastructure.Repositories
             await _dbContext.Expenses.AddAsync(expense);
         }
         public async Task<List<Expense>> GetAll()
-        public void Delete(Expense expense)
         {
             return await _dbContext.Expenses.AsNoTracking().ToListAsync();
         }
-
-        public void GetById(int id)
+        public async Task<Expense?> GetById(long id)
         {
-            return await _dbContext.Expenses.AsNoTracking().ToListAsync();
-        }
-
-        public void Update(Expense expense)
-        {
-            throw new NotImplementedException();
+            return await _dbContext.Expenses.AsNoTracking().FirstOrDefaultAsync(expense => expense.Id == id);
         }
     }
 }

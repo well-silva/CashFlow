@@ -6,7 +6,6 @@ namespace ClashFlow.Domain.Repositories.Expenses
     {
         Task Add(Expense expense);
         Task<List<Expense>> GetAll();
-        void Delete(Expense expense);
-        void GetById(int id);
+        Task<Expense?> GetById(long id);
     }
 }
