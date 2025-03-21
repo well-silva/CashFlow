@@ -1,4 +1,5 @@
-﻿using CashFlow.Aplication.UseCases.Expenses.GetAll;
+﻿using CashFlow.Aplication.UseCases.Expenses.Delete;
+using CashFlow.Aplication.UseCases.Expenses.GetAll;
 using CashFlow.Aplication.UseCases.Expenses.GetById;
 using CashFlow.Aplication.UseCases.Expenses.Register;
 using CashFlow.Communication.Requests;
@@ -45,6 +46,17 @@ namespace CashFlow.Api.Controllers
             var response = await useCase.Execute(id);
 
             return Ok(response);
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(ResponseError),StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> Delete([FromServices] IDeleteExpenseUseCase useCase, [FromRoute] long id)
+        {
+            await useCase.Execute(id);
+
+            return NoContent();
         }
     }
 }
