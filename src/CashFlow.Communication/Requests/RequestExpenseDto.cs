@@ -1,9 +1,8 @@
 ﻿using CashFlow.Communication.Enums;
-using System.ComponentModel.DataAnnotations;
 
 namespace CashFlow.Communication.Requests
 {
-    public class RequestRegisterExpenseDto
+    public class RequestExpenseDto
     {
         public string Title { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;

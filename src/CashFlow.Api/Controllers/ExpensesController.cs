@@ -2,6 +2,7 @@
 using CashFlow.Aplication.UseCases.Expenses.GetAll;
 using CashFlow.Aplication.UseCases.Expenses.GetById;
 using CashFlow.Aplication.UseCases.Expenses.Register;
+using CashFlow.Aplication.UseCases.Expenses.Update;
 using CashFlow.Communication.Requests;
 using CashFlow.Communication.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -17,7 +18,7 @@ namespace CashFlow.Api.Controllers
         [ProducesResponseType(typeof(ResponseError), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Regiter(
             [FromServices] IRegisterExpenseUseCase registerExpenseUseCase,
-            [FromBody] RequestRegisterExpenseDto request
+            [FromBody] RequestExpenseDto request
         )
         {
             var response = await registerExpenseUseCase.Execute(request);
@@ -51,10 +52,29 @@ namespace CashFlow.Api.Controllers
         [HttpDelete]
         [Route("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(typeof(ResponseError),StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> Delete([FromServices] IDeleteExpenseUseCase useCase, [FromRoute] long id)
+        [ProducesResponseType(typeof(ResponseError), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> Delete(
+              [FromServices] IDeleteExpenseUseCase useCase,
+              [FromRoute] long id
+        )
         {
             await useCase.Execute(id);
+
+            return NoContent();
+        }
+
+        [HttpPut]
+        [Route("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(ResponseError), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ResponseError), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> Update(
+            [FromServices] IUpdateExpenseUseCase useCase,
+            [FromRoute] long id,
+            [FromBody] RequestExpenseDto request
+        )
+        {
+            await useCase.Execute(request, id);
 
             return NoContent();
         }

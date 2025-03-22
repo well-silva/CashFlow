@@ -1,45 +1,44 @@
 ﻿using AutoMapper;
 using CashFlow.Communication.Requests;
-using CashFlow.Communication.Responses;
+using CashFlow.Exception;
 using CashFlow.Exception.ExceptionsBase;
-using ClashFlow.Domain.Entities;
 using ClashFlow.Domain.Repositories;
 using ClashFlow.Domain.Repositories.Expenses;
 
-namespace CashFlow.Aplication.UseCases.Expenses.Register
+namespace CashFlow.Aplication.UseCases.Expenses.Update
 {
-    public class RegisterExpenseUseCase : IRegisterExpenseUseCase
+    class UpdateExpenseUseCase : IUpdateExpenseUseCase
     {
-        private readonly IExpensesWriteOnlyRepository _repository;
-        private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-
-        public RegisterExpenseUseCase(
-            IExpensesWriteOnlyRepository repository,
-            IUnitOfWork unitOfWork,
-            IMapper mapper
-        )
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IExpenseUpdateOnlyRepository _repository;
+        public UpdateExpenseUseCase(
+            IMapper mapper, 
+            IUnitOfWork unitOfWork, 
+            IExpenseUpdateOnlyRepository repository
+        ) 
         {
-            _repository = repository;
-            _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _unitOfWork = unitOfWork;
+            _repository = repository;
         }
-        public async Task<ResponseRegisteredExpense> Execute(RequestExpenseDto request)
+        public async Task Execute(RequestExpenseDto request, long id)
         {
             ValidateRequest(request);
 
-            var expense = _mapper.Map<Expense>(request);
+            var expense = await _repository.GetById(id) ?? throw new NotFoundException(ResourceErrorMessages.EXPENSE_NOT_FOUND);
+            
+            _mapper.Map(request, expense);
 
-            await _repository.Add(expense);
+            _repository.Update(expense);
 
             await _unitOfWork.Commit();
-
-            return _mapper.Map<ResponseRegisteredExpense>(expense);
         }
 
         private void ValidateRequest(RequestExpenseDto request)
         {
             var validator = new ExpenseValidator();
+
             var result = validator.Validate(request);
 
             if (result.IsValid == false)

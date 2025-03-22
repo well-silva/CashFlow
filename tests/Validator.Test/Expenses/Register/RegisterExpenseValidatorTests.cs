@@ -1,4 +1,5 @@
-﻿using CashFlow.Aplication.UseCases.Expenses.Register;
+﻿using CashFlow.Aplication.UseCases.Expenses;
+using CashFlow.Aplication.UseCases.Expenses.Register;
 using CashFlow.Communication.Enums;
 using CashFlow.Exception;
 using CommonTestUtilities.Requests;
@@ -12,7 +13,7 @@ namespace Validator.Test.Expenses.Register
         public void Success()
         {
             //Arrange
-            var validator = new RegisterExpenseValidator();
+            var validator = new ExpenseValidator();
             var request = RequestRegisterExpenseBuilder.Build();
 
             //Act
@@ -29,7 +30,7 @@ namespace Validator.Test.Expenses.Register
         public void ErrorTitleEmpty(string title)
         {
             //Arrange
-            var validator = new RegisterExpenseValidator();
+            var validator = new ExpenseValidator();
             var request = RequestRegisterExpenseBuilder.Build();
             request.Title = title;
 
@@ -48,7 +49,7 @@ namespace Validator.Test.Expenses.Register
         public void ErrorDateFuture()
         {
             //Arrange
-            var validator = new RegisterExpenseValidator();
+            var validator = new ExpenseValidator();
             var request = RequestRegisterExpenseBuilder.Build();
             request.Date = DateTime.UtcNow.AddDays(1);
 
@@ -67,7 +68,7 @@ namespace Validator.Test.Expenses.Register
         public void ErrorPaymentTypeInvalid()
         {
             //Arrange
-            var validator = new RegisterExpenseValidator();
+            var validator = new ExpenseValidator();
             var request = RequestRegisterExpenseBuilder.Build();
             request.PaymentType = (PaymentType)800;
 
@@ -89,7 +90,7 @@ namespace Validator.Test.Expenses.Register
         public void ErrorAmountInvalid(decimal amount)
         {
             //Arrange
-            var validator = new RegisterExpenseValidator();
+            var validator = new ExpenseValidator();
             var request = RequestRegisterExpenseBuilder.Build();
             request.Amount = amount;
 

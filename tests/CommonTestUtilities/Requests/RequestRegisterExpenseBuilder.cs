@@ -6,11 +6,11 @@ namespace CommonTestUtilities.Requests
 {
     public class RequestRegisterExpenseBuilder
     {
-        public static RequestRegisterExpenseDto Build()
+        public static RequestExpenseDto Build()
         {
             var faker = new Faker();
 
-            return new Faker<RequestRegisterExpenseDto>()
+            return new Faker<RequestExpenseDto>()
                 .RuleFor(request => request.Title, faker.Commerce.Product())
                 .RuleFor(request => request.Description, faker.Commerce.ProductDescription())
                 .RuleFor(request => request.Amount, faker.Random.Decimal(1, 1000))
