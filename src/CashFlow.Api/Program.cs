@@ -13,6 +13,8 @@ builder.Services.AddMvc(options => options.Filters.Add(typeof(ExpectionFilter)))
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddAplication();
 
+builder.Services.AddRouting(builder => builder.LowercaseUrls = true);
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
