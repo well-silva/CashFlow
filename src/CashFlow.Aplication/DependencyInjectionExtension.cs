@@ -6,6 +6,8 @@ using CashFlow.Aplication.UseCases.Expenses.Register;
 using CashFlow.Aplication.UseCases.Expenses.Reports.Excel;
 using CashFlow.Aplication.UseCases.Expenses.Reports.Pdf;
 using CashFlow.Aplication.UseCases.Expenses.Update;
+using CashFlow.Aplication.UseCases.Users.Register;
+using CashFlow.Application.UseCases.Users.Register;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CashFlow.Aplication
@@ -32,6 +34,7 @@ namespace CashFlow.Aplication
             services.AddScoped<IUpdateExpenseUseCase, UpdateExpenseUseCase>();
             services.AddScoped<IGenerateExpensesReportExcelUseCase, GenerateExpensesReportExcelUseCase>();
             services.AddScoped<IGenerateExpensesReportPdfUseCase, GenerateExpensesReportPdfUseCase>();
+            services.AddScoped<IRegisterUserUseCase, RegisterUserUseCase>();
         }
     }
 }
