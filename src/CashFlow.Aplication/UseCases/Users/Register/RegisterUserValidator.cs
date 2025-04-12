@@ -1,9 +1,8 @@
-﻿using CashFlow.Aplication.UseCases.Users;
-using CashFlow.Communication.Requests;
+﻿using CashFlow.Communication.Requests;
 using CashFlow.Exception;
 using FluentValidation;
 
-namespace CashFlow.Application.UseCases.Users.Register;
+namespace CashFlow.Aplication.UseCases.Users.Register;
 public class RegisterUserValidator : AbstractValidator<RequestRegisterUser>
 {
     public RegisterUserValidator()

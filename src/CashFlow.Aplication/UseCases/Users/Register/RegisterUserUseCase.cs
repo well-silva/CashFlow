@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using CashFlow.Aplication.UseCases.Users.Register;
 using CashFlow.Communication.Requests;
 using CashFlow.Communication.Responses;
 using CashFlow.Exception;
@@ -7,9 +6,10 @@ using CashFlow.Exception.ExceptionsBase;
 using ClashFlow.Domain.Repositories;
 using ClashFlow.Domain.Repositories.Users;
 using ClashFlow.Domain.Security.Cryptography;
+using ClashFlow.Domain.Security.Tokens;
 using FluentValidation.Results;
 
-namespace CashFlow.Application.UseCases.Users.Register;
+namespace CashFlow.Aplication.UseCases.Users.Register;
 public class RegisterUserUseCase : IRegisterUserUseCase
 {
     private readonly IMapper _mapper;
@@ -17,13 +17,15 @@ public class RegisterUserUseCase : IRegisterUserUseCase
     private readonly IUsersReadOnlyRepository _usersReadOnlyRepository;
     private readonly IUsersWriteOnlyRepository _usersWriteOnlyRepository;
     private readonly IUnitOfWork _unitOfWork;
+    private readonly IAccessTokenGenerator _accessTokenGenerator;
 
     public RegisterUserUseCase(
         IMapper mapper,
         IPasswordEncripter passwordEncripter,
         IUsersReadOnlyRepository userReadOnlyRepository,
         IUsersWriteOnlyRepository usersReadOnlyRepository,
-        IUnitOfWork unitOfWork
+        IUnitOfWork unitOfWork,
+        IAccessTokenGenerator accessTokenGenerator
     )
     {
         _mapper = mapper;
@@ -31,6 +33,7 @@ public class RegisterUserUseCase : IRegisterUserUseCase
         _usersReadOnlyRepository = userReadOnlyRepository;
         _usersWriteOnlyRepository = usersReadOnlyRepository;
         _unitOfWork = unitOfWork;
+        _accessTokenGenerator = accessTokenGenerator;
     }
 
     public async Task<ResponseRegisteredUser> Execute(RequestRegisterUser request)
@@ -47,6 +50,7 @@ public class RegisterUserUseCase : IRegisterUserUseCase
         return new ResponseRegisteredUser
         {
             Name = user.Name,
+            Token = _accessTokenGenerator.Generate(user),
         };
     }
 
