@@ -150,4 +150,7 @@
   <data name="INVALID_PASSWORD" xml:space="preserve">
     <value>A senha deve conter mais de 8 caracteres, possui letras maiusculas e minusculas e conter um caracter especial.</value>
   </data>
+  <data name="EMAIL_OR_PASSWORD_INVALID" xml:space="preserve">
+    <value>E-mail ou senha invalido.</value>
+  </data>
 </root>
