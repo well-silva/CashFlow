@@ -8,6 +8,8 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using CashFlow.Infrastructure.Extensions;
 using CashFlow.Application;
+using CashFlow.Domain.Security.Tokens;
+using CashFlow.Api.Token;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -49,6 +51,8 @@ builder.Services.AddMvc(options => options.Filters.Add(typeof(ExpectionFilter)))
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddAplication();
 builder.Services.AddRouting(builder => builder.LowercaseUrls = true);
+builder.Services.AddScoped<ITokenProvider, HttpContextTokenValue>();
+builder.Services.AddHttpContextAccessor();
 
 var signingKey = builder.Configuration.GetValue<string>("Settings:Jwt:SigningKey");
 
