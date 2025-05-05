@@ -1,5 +1,5 @@
 ﻿using Bogus;
-using ClashFlow.Domain.Entities;
+using CashFlow.Domain.Entities;
 using CommonTestUtilities.Cryptography;
 
 namespace CommonTestUtilities.Entities;

@@ -1,10 +1,9 @@
-﻿
+﻿using CashFlow.Domain.Repositories;
+using CashFlow.Domain.Repositories.Expenses;
 using CashFlow.Exception;
 using CashFlow.Exception.ExceptionsBase;
-using ClashFlow.Domain.Repositories;
-using ClashFlow.Domain.Repositories.Expenses;
 
-namespace CashFlow.Aplication.UseCases.Expenses.Delete
+namespace CashFlow.Application.UseCases.Expenses.Delete
 {
     public class DeleteExpenseUseCase : IDeleteExpenseUseCase
     {

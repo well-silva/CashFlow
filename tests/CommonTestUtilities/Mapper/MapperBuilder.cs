@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CashFlow.Aplication.AutoMapper;
+using CashFlow.Application.AutoMapper;
 
 namespace CommonTestUtilities.Mapper;
 public class MapperBuilder

@@ -1,6 +1,6 @@
-﻿using ClashFlow.Domain.Enums;
+﻿using CashFlow.Domain.Enums;
 
-namespace ClashFlow.Domain.Extensions
+namespace CashFlow.Domain.Extensions
 {
     public static class PaymentTypeExtensions
     {

@@ -9,9 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E2E935AB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlow.Api", "src\CashFlow.Api\CashFlow.Api.csproj", "{333E3B2C-6F17-4274-98FF-A954EF954A07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClashFlow.Domain", "src\ClashFlow.Domain\ClashFlow.Domain.csproj", "{C8296339-0324-42BB-BAF8-A0629AD67EA6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlow.Domain", "src\ClashFlow.Domain\CashFlow.Domain.csproj", "{C8296339-0324-42BB-BAF8-A0629AD67EA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlow.Aplication", "src\CashFlow.Aplication\CashFlow.Aplication.csproj", "{AA10EC16-D51F-442C-B86F-ABF522128756}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlow.Application", "src\CashFlow.Aplication\CashFlow.Application.csproj", "{AA10EC16-D51F-442C-B86F-ABF522128756}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlow.Communication", "src\CashFlow.Communication\CashFlow.Communication.csproj", "{BAEC0D81-E0D0-483F-97A1-A9B0274515AE}"
 EndProject

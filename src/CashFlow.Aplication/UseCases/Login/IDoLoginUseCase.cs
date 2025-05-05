@@ -1,7 +1,7 @@
 ﻿using CashFlow.Communication.Requests;
 using CashFlow.Communication.Responses;
 
-namespace CashFlow.Aplication.UseCases.Login
+namespace CashFlow.Application.UseCases.Login
 {
     public interface IDoLoginUseCase
     {

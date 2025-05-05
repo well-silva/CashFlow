@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using CashFlow.Communication.Requests;
+using CashFlow.Domain.Repositories;
+using CashFlow.Domain.Repositories.Expenses;
 using CashFlow.Exception;
 using CashFlow.Exception.ExceptionsBase;
-using ClashFlow.Domain.Repositories;
-using ClashFlow.Domain.Repositories.Expenses;
 
-namespace CashFlow.Aplication.UseCases.Expenses.Update
+namespace CashFlow.Application.UseCases.Expenses.Update
 {
     class UpdateExpenseUseCase : IUpdateExpenseUseCase
     {

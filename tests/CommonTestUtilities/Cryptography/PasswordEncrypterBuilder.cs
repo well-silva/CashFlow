@@ -1,4 +1,4 @@
-﻿using ClashFlow.Domain.Security.Cryptography;
+﻿using CashFlow.Domain.Security.Cryptography;
 using Moq;
 
 namespace CommonTestUtilities.Cryptography;

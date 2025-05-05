@@ -1,15 +1,15 @@
-﻿using CashFlow.Aplication.UseCases.Expenses.Reports.Pdf.Colors;
-using CashFlow.Aplication.UseCases.Expenses.Reports.Pdf.Fonts;
-using ClashFlow.Domain.Extensions;
-using ClashFlow.Domain.Reports;
-using ClashFlow.Domain.Repositories.Expenses;
+﻿using CashFlow.Domain.Extensions;
+using CashFlow.Domain.Repositories.Expenses;
+using CashFlow.Domain.Reports;
 using MigraDoc.DocumentObjectModel;
 using MigraDoc.DocumentObjectModel.Tables;
 using MigraDoc.Rendering;
 using PdfSharp.Fonts;
 using System.Reflection;
+using CashFlow.Application.UseCases.Expenses.Reports.Pdf.Colors;
+using CashFlow.Application.UseCases.Expenses.Reports.Pdf.Fonts;
 
-namespace CashFlow.Aplication.UseCases.Expenses.Reports.Pdf
+namespace CashFlow.Application.UseCases.Expenses.Reports.Pdf
 {
     class GenerateExpensesReportPdfUseCase : IGenerateExpensesReportPdfUseCase
     {
@@ -133,7 +133,7 @@ namespace CashFlow.Aplication.UseCases.Expenses.Reports.Pdf
             row.Cells[0].AddImage(pathProfilePhoto);
             row.Cells[1].AddParagraph("Hey, Wellington Silva");
             row.Cells[1].Format.Font = new Font { Name = FontHelper.RALEWAY_BLACK, Size = 16 };
-            row.Cells[1].VerticalAlignment = MigraDoc.DocumentObjectModel.Tables.VerticalAlignment.Center;
+            row.Cells[1].VerticalAlignment = VerticalAlignment.Center;
         }
         private Table CreateExpenseTable(Section page)
         {

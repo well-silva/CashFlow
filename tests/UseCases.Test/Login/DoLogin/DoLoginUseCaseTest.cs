@@ -1,7 +1,7 @@
-﻿using CashFlow.Aplication.UseCases.Login;
+﻿using CashFlow.Application.UseCases.Login;
+using CashFlow.Domain.Entities;
 using CashFlow.Exception;
 using CashFlow.Exception.ExceptionsBase;
-using ClashFlow.Domain.Entities;
 using CommonTestUtilities.Cryptography;
 using CommonTestUtilities.Entities;
 using CommonTestUtilities.Repositories;

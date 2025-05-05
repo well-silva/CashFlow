@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ClashFlow.Domain.Reports {
+namespace CashFlow.Domain.Reports {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace ClashFlow.Domain.Reports {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ClashFlow.Domain.Reports.ResourceReportGenerationMessage", typeof(ResourceReportGenerationMessage).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CashFlow.Domain.Reports.ResourceReportGenerationMessage", typeof(ResourceReportGenerationMessage).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

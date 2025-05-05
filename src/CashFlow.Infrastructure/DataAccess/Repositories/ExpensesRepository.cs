@@ -1,5 +1,5 @@
-﻿using ClashFlow.Domain.Entities;
-using ClashFlow.Domain.Repositories.Expenses;
+﻿using CashFlow.Domain.Entities;
+using CashFlow.Domain.Repositories.Expenses;
 using Microsoft.EntityFrameworkCore;
 
 namespace CashFlow.Infrastructure.DataAccess.Repositories

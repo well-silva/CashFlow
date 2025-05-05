@@ -1,6 +1,6 @@
-﻿using ClashFlow.Domain.Repositories.Expenses;
+﻿using CashFlow.Domain.Repositories.Expenses;
 
-namespace CashFlow.Aplication.UseCases.Expenses.Reports.Pdf
+namespace CashFlow.Application.UseCases.Expenses.Reports.Pdf
 {
     public interface IGenerateExpensesReportPdfUseCase
     {

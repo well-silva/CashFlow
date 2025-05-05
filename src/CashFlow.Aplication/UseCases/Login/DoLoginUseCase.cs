@@ -1,11 +1,11 @@
 ﻿using CashFlow.Communication.Requests;
 using CashFlow.Communication.Responses;
+using CashFlow.Domain.Repositories.Users;
+using CashFlow.Domain.Security.Cryptography;
+using CashFlow.Domain.Security.Tokens;
 using CashFlow.Exception.ExceptionsBase;
-using ClashFlow.Domain.Repositories.Users;
-using ClashFlow.Domain.Security.Cryptography;
-using ClashFlow.Domain.Security.Tokens;
 
-namespace CashFlow.Aplication.UseCases.Login
+namespace CashFlow.Application.UseCases.Login
 {
     public class DoLoginUseCase(
         IUsersReadOnlyRepository repository,

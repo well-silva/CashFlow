@@ -1,4 +1,4 @@
-﻿namespace ClashFlow.Domain.Enums
+﻿namespace CashFlow.Domain.Enums
 {
     public class Roles
     {

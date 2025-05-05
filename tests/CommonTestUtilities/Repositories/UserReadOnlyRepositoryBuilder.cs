@@ -1,5 +1,5 @@
-﻿using ClashFlow.Domain.Entities;
-using ClashFlow.Domain.Repositories.Users;
+﻿using CashFlow.Domain.Entities;
+using CashFlow.Domain.Repositories.Users;
 using Moq;
 
 namespace CommonTestUtilities.Repositories;

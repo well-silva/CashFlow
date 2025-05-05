@@ -1,6 +1,6 @@
 ﻿using CashFlow.Communication.Requests;
 
-namespace CashFlow.Aplication.UseCases.Expenses.Reports.Excel
+namespace CashFlow.Application.UseCases.Expenses.Reports.Excel
 {
     public interface IGenerateExpensesReportExcelUseCase
     {

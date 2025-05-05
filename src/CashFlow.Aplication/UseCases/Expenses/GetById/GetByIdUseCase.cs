@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using CashFlow.Communication.Responses;
+using CashFlow.Domain.Repositories.Expenses;
 using CashFlow.Exception;
 using CashFlow.Exception.ExceptionsBase;
-using ClashFlow.Domain.Repositories.Expenses;
 
-namespace CashFlow.Aplication.UseCases.Expenses.GetById
+namespace CashFlow.Application.UseCases.Expenses.GetById
 {
     public class GetByIdUseCase : IGetByIdUseCase
     {

@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using CashFlow.Communication.Requests;
 using CashFlow.Communication.Responses;
-using ClashFlow.Domain.Entities;
+using CashFlow.Domain.Entities;
 
-namespace CashFlow.Aplication.AutoMapper
+namespace CashFlow.Application.AutoMapper
 {
     public class AutoMapping : Profile
     {

@@ -1,4 +1,4 @@
-﻿using CashFlow.Aplication.UseCases.Login;
+﻿using CashFlow.Application.UseCases.Login;
 using CashFlow.Communication.Requests;
 using CashFlow.Communication.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -19,7 +19,7 @@ namespace CashFlow.Api.Controllers
         {
             var response = await useCase.Execute(request);
 
-            return Created(string.Empty, response);
+            return Ok(response);
         }
     }
 }

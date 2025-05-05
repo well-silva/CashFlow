@@ -1,6 +1,6 @@
-﻿using ClashFlow.Domain.Enums;
+﻿using CashFlow.Domain.Enums;
 
-namespace ClashFlow.Domain.Entities
+namespace CashFlow.Domain.Entities
 {
     public class Expense
     {

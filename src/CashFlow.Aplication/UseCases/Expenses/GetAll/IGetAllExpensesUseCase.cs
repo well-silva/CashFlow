@@ -1,6 +1,6 @@
 ﻿using CashFlow.Communication.Responses;
 
-namespace CashFlow.Aplication.UseCases.Expenses.GetAll
+namespace CashFlow.Application.UseCases.Expenses.GetAll
 {
     public interface IGetAllExpensesUseCase
     {

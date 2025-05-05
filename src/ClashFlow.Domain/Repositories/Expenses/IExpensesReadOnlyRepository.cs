@@ -1,6 +1,6 @@
-﻿using ClashFlow.Domain.Entities;
+﻿using CashFlow.Domain.Entities;
 
-namespace ClashFlow.Domain.Repositories.Expenses
+namespace CashFlow.Domain.Repositories.Expenses
 {
     public interface IExpensesReadOnlyRepository
     {

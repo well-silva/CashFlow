@@ -1,4 +1,4 @@
-﻿using ClashFlow.Domain.Repositories.Users;
+﻿using CashFlow.Domain.Repositories.Users;
 using Moq;
 
 namespace CommonTestUtilities.Repositories;

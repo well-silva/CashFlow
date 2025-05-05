@@ -1,4 +1,4 @@
-﻿using ClashFlow.Domain.Repositories;
+﻿using CashFlow.Domain.Repositories;
 
 namespace CashFlow.Infrastructure.DataAccess
 {

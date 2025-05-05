@@ -1,8 +1,8 @@
-﻿using CashFlow.Aplication.UseCases.Expenses.Delete;
-using CashFlow.Aplication.UseCases.Expenses.GetAll;
-using CashFlow.Aplication.UseCases.Expenses.GetById;
-using CashFlow.Aplication.UseCases.Expenses.Register;
-using CashFlow.Aplication.UseCases.Expenses.Update;
+﻿using CashFlow.Application.UseCases.Expenses.Delete;
+using CashFlow.Application.UseCases.Expenses.GetAll;
+using CashFlow.Application.UseCases.Expenses.GetById;
+using CashFlow.Application.UseCases.Expenses.Register;
+using CashFlow.Application.UseCases.Expenses.Update;
 using CashFlow.Communication.Requests;
 using CashFlow.Communication.Responses;
 using Microsoft.AspNetCore.Authorization;

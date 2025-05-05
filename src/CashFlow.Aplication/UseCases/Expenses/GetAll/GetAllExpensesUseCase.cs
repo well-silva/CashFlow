@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using CashFlow.Communication.Responses;
-using ClashFlow.Domain.Repositories.Expenses;
+using CashFlow.Domain.Repositories.Expenses;
 
-namespace CashFlow.Aplication.UseCases.Expenses.GetAll
+namespace CashFlow.Application.UseCases.Expenses.GetAll
 {
     class GetAllExpensesUseCase : IGetAllExpensesUseCase
     {

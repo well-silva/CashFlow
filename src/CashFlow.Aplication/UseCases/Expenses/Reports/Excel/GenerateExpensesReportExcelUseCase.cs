@@ -1,10 +1,9 @@
-﻿using ClashFlow.Domain.Enums;
-using ClashFlow.Domain.Extensions;
-using ClashFlow.Domain.Reports;
-using ClashFlow.Domain.Repositories.Expenses;
+﻿using CashFlow.Domain.Extensions;
+using CashFlow.Domain.Repositories.Expenses;
+using CashFlow.Domain.Reports;
 using ClosedXML.Excel;
 
-namespace CashFlow.Aplication.UseCases.Expenses.Reports.Excel
+namespace CashFlow.Application.UseCases.Expenses.Reports.Excel
 {
     class GenerateExpensesReportExcelUseCase : IGenerateExpensesReportExcelUseCase
     {

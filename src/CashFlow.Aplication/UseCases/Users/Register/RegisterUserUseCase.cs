@@ -1,15 +1,16 @@
 ﻿using AutoMapper;
 using CashFlow.Communication.Requests;
 using CashFlow.Communication.Responses;
+using CashFlow.Domain.Entities;
+using CashFlow.Domain.Repositories;
+using CashFlow.Domain.Repositories.Users;
+using CashFlow.Domain.Security.Cryptography;
+using CashFlow.Domain.Security.Tokens;
 using CashFlow.Exception;
 using CashFlow.Exception.ExceptionsBase;
-using ClashFlow.Domain.Repositories;
-using ClashFlow.Domain.Repositories.Users;
-using ClashFlow.Domain.Security.Cryptography;
-using ClashFlow.Domain.Security.Tokens;
 using FluentValidation.Results;
 
-namespace CashFlow.Aplication.UseCases.Users.Register;
+namespace CashFlow.Application.UseCases.Users.Register;
 public class RegisterUserUseCase : IRegisterUserUseCase
 {
     private readonly IMapper _mapper;
@@ -40,7 +41,7 @@ public class RegisterUserUseCase : IRegisterUserUseCase
     {
         await Validate(request);
 
-        var user = _mapper.Map<ClashFlow.Domain.Entities.User>(request);
+        var user = _mapper.Map<User>(request);
         user.Password = _passwordEncripter.Encrypt(request.Password);
         user.UserIdentifier = Guid.NewGuid();
 

@@ -1,5 +1,5 @@
-﻿using ClashFlow.Domain.Entities;
-using ClashFlow.Domain.Security.Tokens;
+﻿using CashFlow.Domain.Entities;
+using CashFlow.Domain.Security.Tokens;
 using Moq;
 
 namespace CommonTestUtilities.Token;

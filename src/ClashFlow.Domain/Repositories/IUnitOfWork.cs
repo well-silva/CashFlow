@@ -1,4 +1,4 @@
-﻿namespace ClashFlow.Domain.Repositories
+﻿namespace CashFlow.Domain.Repositories
 {
     public interface IUnitOfWork
     {

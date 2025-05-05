@@ -1,23 +1,24 @@
-﻿using CashFlow.Aplication.AutoMapper;
-using CashFlow.Aplication.UseCases.Expenses.Delete;
-using CashFlow.Aplication.UseCases.Expenses.GetAll;
-using CashFlow.Aplication.UseCases.Expenses.GetById;
-using CashFlow.Aplication.UseCases.Expenses.Register;
-using CashFlow.Aplication.UseCases.Expenses.Reports.Excel;
-using CashFlow.Aplication.UseCases.Expenses.Reports.Pdf;
-using CashFlow.Aplication.UseCases.Expenses.Update;
-using CashFlow.Aplication.UseCases.Login;
-using CashFlow.Aplication.UseCases.Users.Register;
+﻿using CashFlow.Application;
+using CashFlow.Application.AutoMapper;
+using CashFlow.Application.UseCases.Expenses.Delete;
+using CashFlow.Application.UseCases.Expenses.GetAll;
+using CashFlow.Application.UseCases.Expenses.GetById;
+using CashFlow.Application.UseCases.Expenses.Register;
+using CashFlow.Application.UseCases.Expenses.Reports.Excel;
+using CashFlow.Application.UseCases.Expenses.Reports.Pdf;
+using CashFlow.Application.UseCases.Expenses.Update;
+using CashFlow.Application.UseCases.Login;
+using CashFlow.Application.UseCases.Users.Register;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CashFlow.Aplication
+namespace CashFlow.Application
 {
     public static class DependencyInjectionExtension
     {
         public static void AddAplication(this IServiceCollection services)
         {
-            AddUseCases(services);
-            AddAutoMapper(services);
+            services.AddUseCases();
+            services.AddAutoMapper();
         }
 
         private static void AddAutoMapper(this IServiceCollection services)

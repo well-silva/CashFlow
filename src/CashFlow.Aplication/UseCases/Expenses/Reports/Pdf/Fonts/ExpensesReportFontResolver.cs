@@ -1,7 +1,7 @@
 ﻿using PdfSharp.Fonts;
 using System.Reflection;
 
-namespace CashFlow.Aplication.UseCases.Expenses.Reports.Pdf.Fonts
+namespace CashFlow.Application.UseCases.Expenses.Reports.Pdf.Fonts
 {
     public class ExpensesReportFontResolver : IFontResolver
     {
