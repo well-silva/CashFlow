@@ -1,4 +1,4 @@
-﻿using CashFlow.Aplication.UseCases.Users.Register;
+﻿using CashFlow.Application.UseCases.Users.Register;
 using CashFlow.Exception;
 using CommonTestUtilities.Requests;
 using Shouldly;
