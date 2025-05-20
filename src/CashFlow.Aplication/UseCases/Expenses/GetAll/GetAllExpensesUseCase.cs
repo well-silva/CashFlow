@@ -5,7 +5,7 @@ using CashFlow.Domain.Services.LoggedUser;
 
 namespace CashFlow.Application.UseCases.Expenses.GetAll
 {
-    class GetAllExpensesUseCase : IGetAllExpensesUseCase
+    public class GetAllExpensesUseCase : IGetAllExpensesUseCase
     {
         private readonly IExpensesReadOnlyRepository _repository;
         private readonly IMapper _mapper;
