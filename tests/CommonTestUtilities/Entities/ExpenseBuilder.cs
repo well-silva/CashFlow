@@ -1,6 +1,5 @@
 ﻿using Bogus;
 using CashFlow.Domain.Entities;
-using MigraDoc.DocumentObjectModel;
 
 namespace CommonTestUtilities.Entities;
 public class ExpenseBuilder
