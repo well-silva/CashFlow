@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CashFlow.Infrastructure.DataAccess.Repositories
 {
-    internal class ExpensesRepository : IExpensesReadOnlyRepository, IExpensesWriteOnlyRepository, IExpenseUpdateOnlyRepository
+    internal class ExpensesRepository : IExpensesReadOnlyRepository, IExpensesWriteOnlyRepository, IExpensesUpdateOnlyRepository
     {
         private readonly CashFlowDbContext _dbContext;
         public ExpensesRepository(CashFlowDbContext dbContext)
@@ -20,7 +20,7 @@ namespace CashFlow.Infrastructure.DataAccess.Repositories
         }
         public async Task<List<Expense>> GetAll(User user) => await _dbContext.Expenses.AsNoTracking().Where(expense => expense.UserId == user.Id).ToListAsync();
         async Task<Expense?> IExpensesReadOnlyRepository.GetById(User user, long id) => await _dbContext.Expenses.AsNoTracking().FirstOrDefaultAsync(expense => expense.Id == id && expense.UserId == user.Id);
-        async Task<Expense?> IExpenseUpdateOnlyRepository.GetById(User user, long id) => await _dbContext.Expenses.FirstOrDefaultAsync(expense => expense.Id == id && expense.UserId == user.Id);
+        async Task<Expense?> IExpensesUpdateOnlyRepository.GetById(User user, long id) => await _dbContext.Expenses.FirstOrDefaultAsync(expense => expense.Id == id && expense.UserId == user.Id);
         public void Update(Expense expense) => _dbContext.Expenses.Update(expense);
         public async Task<List<Expense>> FilterByMonth(User user,DateOnly date)
         {

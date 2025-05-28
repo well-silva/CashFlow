@@ -8,16 +8,16 @@ using CashFlow.Exception.ExceptionsBase;
 
 namespace CashFlow.Application.UseCases.Expenses.Update
 {
-    class UpdateExpenseUseCase : IUpdateExpenseUseCase
+    public class UpdateExpenseUseCase : IUpdateExpenseUseCase
     {
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IExpenseUpdateOnlyRepository _repository;
+        private readonly IExpensesUpdateOnlyRepository _repository;
         private readonly ILoggedUser _loggedUser;
         public UpdateExpenseUseCase(
             IMapper mapper, 
             IUnitOfWork unitOfWork, 
-            IExpenseUpdateOnlyRepository repository,
+            IExpensesUpdateOnlyRepository repository,
             ILoggedUser loggedUser
         ) 
         {
