@@ -9,7 +9,7 @@ using WebApi.Test.InlineData;
 namespace WebApi.Test.Expenses.Update;
 public class UpdateExpenseTest : CashFlowClassFixture
 {
-    private const string METHOD = "api/Expenses";
+    private const string METHOD = "api/expenses";
 
     private readonly string _token;
     private readonly long _expenseId;
