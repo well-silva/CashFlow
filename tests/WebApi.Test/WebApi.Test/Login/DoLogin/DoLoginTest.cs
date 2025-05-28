@@ -4,8 +4,6 @@ using CommonTestUtilities.Requests;
 using FluentAssertions;
 using System.Globalization;
 using System.Net;
-using System.Net.Http.Headers;
-using System.Net.Http.Json;
 using System.Text.Json;
 using WebApi.Test.InlineData;
 
@@ -20,9 +18,9 @@ public class DoLoginTest : CashFlowClassFixture
 
     public DoLoginTest(CustomWebApplicationFactory webApplicationFactory) : base(webApplicationFactory)
     {
-        _email = webApplicationFactory.GetEmail();
-        _name = webApplicationFactory.GetName();
-        _password = webApplicationFactory.GetPassword();
+        _email = webApplicationFactory.UserTeamMember.GetEmail();
+        _name = webApplicationFactory.UserTeamMember.GetName();
+        _password = webApplicationFactory.UserTeamMember.GetPassword();
     }
 
     [Fact]
