@@ -14,7 +14,7 @@ namespace WebApi.Test;
 public class CustomWebApplicationFactory : WebApplicationFactory<Program>
 {
     public UserIdentityManager UserTeamMember { get; private set; } = default!;
-    public UserIdentityManager UserTeamAdmin { get; private set; } = default!;
+    public UserIdentityManager UserAdmin { get; private set; } = default!;
     public ExpenseIdentityManager ExpenseMemberTeam { get; private set; } = default!;
     public ExpenseIdentityManager ExpenseAdmin { get; private set; } = default!;
     protected override void ConfigureWebHost(IWebHostBuilder builder)
@@ -94,7 +94,7 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
 
         var token = accessTokenGenerator.Generate(user);
 
-        UserTeamAdmin = new UserIdentityManager(user, password, token);
+        UserAdmin = new UserIdentityManager(user, password, token);
 
         return user;
     }
