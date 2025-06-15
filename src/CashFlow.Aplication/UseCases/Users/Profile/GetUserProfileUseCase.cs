@@ -3,7 +3,7 @@ using AutoMapper;
 using CashFlow.Communication.Responses;
 using CashFlow.Domain.Services.LoggedUser;
 
-namespace CashFlow.Application.UseCases.Expenses.Register;
+namespace CashFlow.Application.UseCases.Users.Profile;
 public class GetUserProfileUseCase : IGetUserProfileUseCase
 {
     private readonly ILoggedUser _loggedUser;

@@ -1,4 +1,4 @@
-﻿using CashFlow.Application.UseCases.Expenses.Register;
+﻿using CashFlow.Application.UseCases.Users.Profile;
 using CashFlow.Domain.Entities;
 using CommonTestUtilities.Entities;
 using CommonTestUtilities.LoggedUser;

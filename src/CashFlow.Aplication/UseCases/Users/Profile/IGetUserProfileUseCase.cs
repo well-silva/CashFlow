@@ -1,6 +1,6 @@
 ﻿using CashFlow.Communication.Responses;
 
-namespace CashFlow.Application.UseCases.Expenses.Register;
+namespace CashFlow.Application.UseCases.Users.Profile;
 public interface IGetUserProfileUseCase
 {
     Task<ResponseUserProfile> Execute();
